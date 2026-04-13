@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Pagina de Login</title>
+  </head>
+  <body>
+    <main class="layout-principal">
+      <section
+        class="coluna coluna-narrativa"
+        aria-label="Apresentacao profissional"
+      >
+        <p class="eyebrow">Disponivel para contratacao</p>
+        <h1>Web e C# — transformando curiosidade em código.</h1>
+        <p class="subtitulo">
+          Especialista em desenvolvimento front-end (JavaScript, React, CSS) e
+          back-end com C#. Procuro estágio dinâmico onde possa aplicar
+          conhecimento técnico, aprender boas práticas de código e contribuir
+          para produtos que impactam.
+        </p>
+
+        <div class="acoes-hero">
+          <a
+            class="btn btn-outline"
+            href="https://github.com/martoXm"
+            target="_blank"
+            >Conhecer meus projetos</a
+          >
+          <a
+            class="btn btn-solid"
+            href="mailto:gabriel.martorelli@hotmail.com"
+            target="_blank"
+            >Conversar</a
+          >
+        </div>
+      </section>
+
+      <section class="coluna coluna-login" aria-label="Area de login demo">
+        <form id="login-form" novalidate>
+          <h2>Entrar na plataforma</h2>
+          <p class="texto-apoio">
+            Use credenciais de demonstracao para testar a experiencia.
+          </p>
+
+          <div class="campo">
+            <label for="email">E-mail</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="voce@exemplo.com"
+              autocomplete="email"
+              required
+            />
+          </div>
+
+          <div class="campo">
+            <label for="senha">Senha</label>
+            <input
+              type="password"
+              id="senha"
+              name="senha"
+              placeholder="Minimo 6 caracteres"
+              autocomplete="current-password"
+              minlength="6"
+              required
+            />
+          </div>
+
+          <button type="submit" id="btn-login">Entrar</button>
+
+          <p class="texto-apoio-secundario">
+            Demo front-end: nenhum dado e enviado para servidor.
+          </p>
+
+          <div
+            id="feedback"
+            class="feedback"
+            role="status"
+            aria-live="polite"
+          ></div>
+        </form>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
