@@ -208,3 +208,26 @@ Esses ajustes melhoram consistencia visual e evitam regras CSS ignoradas pelo na
 ## 10) Resumo rapido
 
 Voce construiu uma tela de login de estudo com boa base de UI, responsividade e validacao front-end. A arquitetura esta limpa e didatica. Corrigindo os pequenos pontos de CSS listados, o projeto fica pronto como template reutilizavel para novos exercicios.
+
+---
+
+## 11) Correcao mobile iPhone (fundo branco ao puxar a pagina)
+
+### Problema observado
+
+No Safari do iPhone, ao arrastar a pagina para cima/baixo (efeito de bounce/overscroll), aparecia uma faixa branca no fundo.
+
+### Causa tecnica
+
+O fundo com gradiente estava aplicado apenas no `body`. Durante o overscroll, o Safari pode revelar a area do `html` (viewport base), que estava sem o mesmo fundo visual.
+
+### Solucao aplicada
+
+1. Aplicar o mesmo fundo gradiente no `html`.
+2. Definir `body` com `background: transparent` para herdar o visual do `html` no bounce.
+3. Usar `min-height: 100dvh` no `body` para viewport mobile moderna.
+4. Adicionar fallback iOS com `-webkit-fill-available` em `html` e `body` via `@supports (-webkit-touch-callout: none)`.
+
+### Resultado
+
+Durante o overscroll no iPhone, o navegador deixa de mostrar faixa branca e mantém o fundo do projeto de forma consistente.
